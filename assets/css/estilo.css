@@ -70,7 +70,7 @@ body {
     border-radius: 0 0 0.3em 0.3em;
 }
 
-.section-busca__select {
+.section-busca__input-select {
     margin: 0.8em 0;
 }
 
@@ -92,14 +92,14 @@ body {
 }
 
 .section_resultado__corpo {
-    padding: 1.6em;
+    
     margin-top: 2.2em;
     background-color: var(--color-light-gray-2);
     border: 2px solid var(--color-light-gray-3);
     border-radius: 0.3em 0.3em;
 }
 
-.section-resultado__linha {
+.section-resultado__div-linha {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,6 +109,11 @@ body {
 .section-resultado__label {
     font-weight: 700;
     font-size: 1.2em;
+}
+
+.section-resultado__div-linhas {
+    background-image: linear-gradient(360deg, var(--color-light-gray-3), var(--color-light-gray-2));
+    margin: 0 0;
 }
 
 .section-resultado__cod-linha {
@@ -134,15 +139,14 @@ body {
     }
 }
 
-.section-resultado__tempo {
-    padding: 0.2em;
+.section-resultado__div-integracao {
     border: 0.2em solid var(--color-light-gray-3);
     border-left: 0;
     border-right: 0;
-    margin: 0 0.3em;
+    margin: 0 0;
 }
 
-.section-resultado__integracao {
+.section-resultado__div-tempo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,14 +159,47 @@ body {
 }
 
 .section-resultado__definicao {
-    text-align: center;
     margin: 0.3em;
+    text-align: center;
     font-size: 1.2em;
 }
 
 .section-resultado__duracao {
-    text-align: center;
     margin: 0.3em;
+    text-align: center;
     font-weight: 700;
     font-size: 1.4em;
+}
+
+.section-resultado__locais {
+    background-image: linear-gradient(180deg, var(--color-light-gray-3), var(--color-light-gray-2));
+    margin: 0 0px ;
+}
+
+.section-resultado__titulo-locais {
+    margin: 0.3em 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.section-resultado__lista-locais {
+    position: relative;
+}
+
+.section-resultado__segmento {
+    height: calc(100% - 20px);
+    width: 5px;
+    background-color: var(--color-pink);
+    display: inline-block;
+    position: absolute;
+    
+}
+
+.section-resultado__marcador {
+    border: 1px solid var(--color-pink);
+    background-color: var(--color-pink);
+    border-radius: 100%;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
 }

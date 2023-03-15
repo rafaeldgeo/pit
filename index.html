@@ -33,7 +33,7 @@
                 <div class="section-busca__corpo">
                     <form class="needs-validation" action="" method="get" novalidate>
                         <div class="row">
-                            <div class="col-12 col-md-6 section-busca__select">
+                            <div class="col-12 col-md-6 section-busca__input-select">
                                 <label for="primeiravalidacao" class="form-label section-busca__label-select">1ª Validação do bilhete</label>
                                 <select class="form-select" aria-label="Primeira validação do bilhete" id="primeiravalidacao" required>
                                     <option selected disabled value="">Selecione a linha</option>
@@ -43,7 +43,7 @@
                                     Selecione uma linha
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 section-busca__select">
+                            <div class="col-12 col-md-6 section-busca__input-select">
                                 <label for="segundavalidacao" class="form-label section-busca__label-select">2ª Validação do bilhete</label>
                                 <select class="form-select" aria-label="Segunda Validação do bilhete" id="segundavalidacao" required>
                                     <option selected disabled value="">Selecione a linha</option>
@@ -63,29 +63,49 @@
 
             <section class="section-resultado">
                 <div class="section_resultado__corpo" aria-label="resultado da busca">
-                    <div class="row">
-                        <div class="col-12 col-md-5 section-resultado__linha">
+                    <div class="row section-resultado__div-linhas">
+                        <div class="col-12 col-md-5 section-resultado__div-linha">
                             <span class="section-resultado__label" arial-label="primeira validação do bilhete">1ª Validação do bilhete</span>
                             <span class="section-resultado__cod-linha" arial-label="linha">010A</span>
                         </div>
-                        <div class="col-12 col-md-2 section-resultado__linha" aria-label="integração">
-                            <i class="col-xl-5 bi bi-arrow-right section-resultado__arrow"></i>
+                        <div class="col-12 col-md-2 section-resultado__div-linha" aria-label="integração">
+                            <i class="bi bi-arrow-right section-resultado__arrow"></i>
                         </div>
-                        <div class="col-12 col-md-5 section-resultado__linha">
+                        <div class="col-12 col-md-5 section-resultado__div-linha">
                             <span class="section-resultado__label" arial-label="segunda validação do bilhete">2ª Validação do bilhete</span>
                             <span class="section-resultado__cod-linha" arial-label="linha">010A</span>
                         </div>
                     </div>
-                    <div class="row section-resultado__tempo">
-                        <div class="section-resultado__integracao" aria-label="tempo para integração">
+                    <div class="row section-resultado__div-integracao">
+                        <div class="section-resultado__div-tempo" aria-label="tempo para integração">
                             <i class="bi bi-clock section-resultado__clock"></i>
                             <span class="section-resultado__definicao">Tempo para integração:</span>                     
                             <span class="section-resultado__duracao">1 hora (60 minutos)</span>
                         </div>
                     </div>
-                    <div>
-                        <div>Ruas</div>
-                        <div>Ruas</div>
+                    <div class="row section-resultado__locais">
+                        <div>
+                            <h3 class="section-resultado__titulo-locais">Locais para a integração</h3>
+                        </div>
+                        <div class="section-resultado__lista-locais">
+                            <div class="section-resultado__segmento"></div>
+                            <table>
+                                <tr>
+                                    <td class="section-resultado__marcador"></td>
+                                    <td>Teste</td>
+                                </tr>
+                                <tr>
+                                    <td class="section-resultado__marcador"></td>
+                                    <td>Teste</td>
+                                </tr>
+                                <tr>
+                                    <td class="section-resultado__marcador"></td>
+                                    <td>Teste</td>
+                                </tr>
+                                
+                            </table>
+
+                        </div>
                     </div>
                 </div>
             </section>
