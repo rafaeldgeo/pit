@@ -92,7 +92,6 @@ body {
 }
 
 .section_resultado__corpo {
-    
     margin-top: 2.2em;
     background-color: var(--color-light-gray-2);
     border: 2px solid var(--color-light-gray-3);
@@ -100,6 +99,7 @@ body {
 }
 
 .section-resultado__div-linha {
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,6 +109,7 @@ body {
 .section-resultado__label {
     font-weight: 700;
     font-size: 1.2em;
+    text-align: center;
 }
 
 .section-resultado__div-linhas {
@@ -127,14 +128,14 @@ body {
     border-radius: 0.4em;
 }
 
-.section-resultado__arrow {
+.section-resultado__icon-arrow {
     font-size: 5em;
     color: var(--color-pink);
     rotate: 0deg;
 }
 
 @media only screen and (max-width: 767px) {    
-    .section-resultado__arrow {
+    .section-resultado__icon-arrow {
         rotate: 90deg;
     }
 }
@@ -153,7 +154,7 @@ body {
     flex-wrap: wrap;
 }
 
-.section-resultado__clock {
+.section-resultado__icon-clock {
     font-size: 2.8em;
     color: var(--color-pink);
 }
@@ -177,25 +178,63 @@ body {
 }
 
 .section-resultado__titulo-locais {
-    margin: 0.3em 0;
+    margin: 0.8em 0;
     text-align: center;
     font-size: 1.2em;
+    font-weight: 700;
 }
 
 .section-resultado__segmento {
-    height: calc(100% - 30px);
-    width: 6px;
+    margin-top: 0.2em;
+    height: calc(100% - 36px);
+    width: 20px;
     background-color: var(--color-pink);
-    left: 15px;
-    top: 8px;
+    left: 46px;
+    top: 10px;
     position: relative;
     float: left;
+    border-radius: 0.6em;
+} 
+
+.section-resultado__marcador {
+    padding: 0.8em 0.8em;
+    position: relative;
 }
+
 
 .section-resultado__lista {
-    list-style-image: url("");
+    list-style-type: none;
+    font-size: 1.2em;
 }
 
+.section-resultado__lista-item--top {
+    display: flex;
+    align-items: baseline;
+}
 
+.section-resultado__lista-item--center {
+    display: flex;
+    align-items: center;
+}
 
+.section-resultado__lista-item--end {
+    display: flex;
+    align-items: end;
+}
 
+@media only screen and (max-width: 319px) {    
+
+    .section-resultado__segmento {
+      display: none;
+    } 
+
+    .section-resultado__marcador {
+        display: none;
+    }
+
+    .section-resultado__lista {
+        padding-left: 0;
+        font-size: 1.0em;
+    }
+    
+}
