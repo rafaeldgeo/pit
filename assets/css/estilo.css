@@ -98,15 +98,10 @@ body {
     color: var(--color-light);
 }
 
-.section-busca__div-btn-conheca {
-    display: flex;
-    justify-content: end;
-    margin-top: 0.8em;
-}
-
 .section-busca__btn-conheca {
     display: block;
     padding: 0.4em;
+    margin-top: 0.8em;
     border: none;
     border-radius: 0.4em;
     font-size: 1em;
