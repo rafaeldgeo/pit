@@ -57,7 +57,7 @@ body {
 .header__nome-logo {
     margin: 0.2em;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .header__titulo {
@@ -79,7 +79,7 @@ body {
     margin: 0;
     padding: 0.5em;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 700;
     background-color: var(--color-light-gray-2);
     border-radius: 0.3em 0.3em 0 0;
@@ -99,7 +99,7 @@ body {
 
 .section-busca__label-select {
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .section-busca__btn-buscar {
@@ -108,7 +108,7 @@ body {
     padding: 0.6em;
     border: none;
     border-radius: 0.4em;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     background-color: var(--color-pink);
     color: var(--color-light);
     font-weight: 700;
@@ -132,7 +132,7 @@ body {
     margin-top: 0.8em;
     border: none;
     border-radius: 0.4em;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 700;
     background-color: var(--color-dark-blue);
     color: var(--color-light);
@@ -151,12 +151,12 @@ body {
 }
 
 .section-busca__modal-subtitulo {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
 .section-busca__modal-paragrafo {
-    font-size: 1em;
+    font-size: 1rem;
     text-align: justify;
 }
 
@@ -169,7 +169,7 @@ body {
     padding: 0.4em;
     border: none;
     border-radius: 0.4em;
-    font-size: 1em;
+    font-size: 1rem;
     background-color: var(--color-dark-blue);
     color: var(--color-light);
 }
@@ -201,7 +201,7 @@ body {
 
 .section-resultado__label {
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     text-align: center;
 }
 
@@ -216,7 +216,7 @@ body {
     background-color: var(--color-dark);
     color: var(--color-light);
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.4rem;
     letter-spacing: 0.1em;
     border-radius: 0.4em;
 }
@@ -226,7 +226,7 @@ body {
 }
 
 .section-resultado__icon-arrow {
-    font-size: 5em;
+    font-size: 5rem;
     color: var(--color-pink);
     rotate: 0deg;
 }
@@ -252,14 +252,14 @@ body {
 }
 
 .section-resultado__icon-clock {
-    font-size: 2.8em;
+    font-size: 2.8rem;
     color: var(--color-pink);
 }
 
 .section-resultado__definicao {
     margin: 0.3em;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -267,7 +267,7 @@ body {
     margin: 0.3em;
     text-align: center;
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.4rem;
 }
 
 .section-resultado__corpo-locais {
@@ -278,7 +278,7 @@ body {
 .section-resultado__titulo-locais {
     margin: 0.8em 0;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -301,7 +301,7 @@ body {
 
 .section-resultado__lista {
     list-style-type: none;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .section-resultado__lista-item--top {
@@ -331,7 +331,7 @@ body {
 
     .section-resultado__lista {
         padding-left: 0;
-        font-size: 1.0em;
+        font-size: 1.0rem;
     }
 
 }
@@ -351,7 +351,7 @@ body {
 .footer_paragrafo {
     margin: 0.5em 0;
     text-align: justify;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     color: var(--color-light);
 }
 
