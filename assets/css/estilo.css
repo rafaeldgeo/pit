@@ -8,6 +8,8 @@
     --color-dark: #5b5b5d;
     --color-blue: #0775c2;
     --color-dark-blue: #055c9b;
+    --color-focus: #B6CEF5;
+    --color-focus-border: #0d6efd;
     --color-pink: #e1275f;
     --color-dark-pink: #b4214d ;
     --color-light-gray-1: #EFEFF1;
@@ -25,6 +27,25 @@ body {
     font-family: var(--font-main);
 }
 
+/* Atalho acessibilidade */
+.header__skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: var(--color-light);
+    background-color: var(--color-pink);
+    padding: 0.2em;
+  }
+
+  .header__skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+ 
 .header__div-logo {
     margin: 1em 0;
 }
@@ -98,6 +119,13 @@ body {
     color: var(--color-light);
 }
 
+.section-busca__btn-buscar:focus {
+    outline-color: var(--color-focus);
+    outline-style: solid;
+    outline-width: 0.3em;
+    border: 0.1em solid var(--color-focus-border);
+}
+
 .section-busca__btn-conheca {
     display: block;
     padding: 0.4em;
@@ -113,6 +141,13 @@ body {
 .section-busca__btn-conheca:hover {
     background-color: var(--color-blue);
     color: var(--color-light);
+}
+
+.section-busca__btn-conheca:focus {
+    outline-color: var(--color-focus);
+    outline-style: solid;
+    outline-width: 0.3em;
+    border: 0.1em solid var(--color-focus-border);
 }
 
 .section-busca__modal-subtitulo {
@@ -311,4 +346,16 @@ body {
     color: var(--color-light);
 }
 
- 
+.footer__link-ceturb:focus {
+    outline-color: var(--color-focus);
+    outline-style: solid;
+    outline-width: 0.3em;
+    border: 0.1em solid var(--color-focus-border);
+}
+
+.footer__link-goves:focus {
+    outline-color: var(--color-focus);
+    outline-style: solid;
+    outline-width: 0.3em;
+    border: 0.1em solid var(--color-focus-border);
+}

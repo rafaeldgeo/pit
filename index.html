@@ -12,7 +12,8 @@
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <header class="header"> 
+            <a href="#buscar" class="header__skip">Ir para o contéudo principal</a>
             <div class="row header__div-logo">
                 <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
                     <img class="header__img-pit" src="assets/img/logo_pit.svg" alt="" style="width:90px;height:82px;">
@@ -23,7 +24,7 @@
         </header>
 
         <main class="main">
-            <section class="section-busca" role="">
+            <section class="section-busca" id="buscar" aria-label="Buscar linhas que realizam a integração temporal">
                 <h3 class="section-busca__titulo">Buscar linhas que realizam a integração temporal</h3>
                 <div class="section-busca__corpo">
                     <form class="needs-validation" action="" method="get" novalidate>
@@ -58,14 +59,14 @@
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="conhecaModalLabel">Conheça como funciona a integração temporal</h1>
+                            <h2 class="modal-title fs-5" id="conhecaModalLabel">Conheça como funciona a integração temporal</h2>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <h2 class="section-busca__modal-subtitulo">O que é a integração temporal?</h2>
-                            <p class="section-busca__modal-paragrafo">É uma opção adicional ao sistema integrado existente, através da qual o <strong>usuário pode trocar de linha, sem pagar uma nova passagem, </strong> desde que se valide o cartão na linha de destino dentro de um determinado período de tempo.</p>
+                            <h4 class="section-busca__modal-subtitulo">O que é a integração temporal?</h4>
+                            <p class="section-busca__modal-paragrafo">É uma opção adicional ao sistema integrado existente, através da qual o usuário pode trocar de linha, sem pagar uma nova passagem, <strong>desde que se valide o cartão na linha de destino dentro de um determinado período de tempo.</strong></p>
                             <img class="section-busca__modal-img" src="assets/img/integracao.svg" alt="" style="width: 180px; height: 108px;">
-                            <h2 class="section-busca__modal-subtitulo">Tempo para a troca de linha</h2>
+                            <h4 class="section-busca__modal-subtitulo">Tempo para a troca de linha</h4>
                             <p class="section-busca__modal-paragrafo">A troca pode ser feita em um período de tempo que varia de <strong>45 minutos até 2 horas e 30 minutos</strong>  dependendo da linha a ser utilizada. </p>
                             <p><em>Realize a busca no site para saber quais linhas é permitida a integração temporal e seu respectivo tempo.</em></p>
                         </div>
@@ -78,7 +79,7 @@
 
             </section>
 
-            <section class="section-resultado" aria-label="resultado da busca">
+            <section class="section-resultado" aria-label="resultado da busca" aria-hidden="true">
                 <div class="section_resultado__corpo">
                     <div class="row section-resultado__div-linhas">
                         <div class="col-12 col-md-5 section-resultado__div-linha">
@@ -87,7 +88,7 @@
                             data-bs-custom-class="custom-tooltip" data-bs-title="010A - NOVA PALESTINA / FRADINHOS">010A</span>
                         </div>
                         <div class="col-12 col-md-2 section-resultado__div-linha">
-                            <i class="bi bi-arrow-right section-resultado__icon-arrow"></i>
+                            <i class="bi bi-arrow-right section-resultado__icon-arrow" role="img" aria-hidden="true"></i>
                         </div>
                         <div class="col-12 col-md-5 section-resultado__div-linha">
                             <span class="section-resultado__label" arial-label="segunda validação do bilhete">2ª Validação do cartão</span>
@@ -97,7 +98,7 @@
                     </div>
                     <div class="row section-resultado__div-integracao">
                         <div class="section-resultado__div-tempo">
-                            <i class="bi bi-clock section-resultado__icon-clock"></i>
+                            <i class="bi bi-clock section-resultado__icon-clock" role="img" aria-hidden="true"></i>
                             <span class="section-resultado__definicao">Tempo para integração:</span>                     
                             <span class="section-resultado__duracao">1 hora (60 minutos)</span>
                         </div>
@@ -109,16 +110,16 @@
                             <ul class="section-resultado__lista">
                                 <li class="section-resultado__lista-item--top">
                                     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-                                    <div><span aria-label="nome do local para realizar a integração">Av. Paulino Mullher</span></div>
+                                    <div><span>Av. Paulino Mullher</span></div>
                                 </li>
                                 <li class="section-resultado__lista-item--center">
                                     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-                                    <div><span aria-label="nome do local para realizar a integração">Av. Vitória</span>
+                                    <div><span>Av. Vitória</span>
                                     </div>
                                 </li>
                                 <li class="section-resultado__lista-item--end">
                                     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-                                    <div><span aria-label="nome do local para realizar a integração">Av. Jerônimo Monteiro</span></div>
+                                    <div><span>Av. Jerônimo Monteiro</span></div>
                                 </li>       
                             </ul>
                         </div>
@@ -135,10 +136,10 @@
                     <p class="footer_paragrafo">PIT é um portal de informações mantido pela <abbr title="Companhia Estadual de Transportes Coletivos de Passageiros do Estado do Espírito Santo">CETURB/ES</abbr>, empresa pública gestora do Sistema de Transportes Coletivos Intermunicipal e Intramunicipal de Passageiros do Estado do Espírito Santo.</p>
                 </div>
                 <div class="col-12 col-md-7 col-xl-5 offset-xl-2 d-flex justify-content-lg-end justify-content-center align-items-center flex-wrap">
-                    <a href="https://ceturb.es.gov.br/" target="_blank">
+                    <a class="footer__link-ceturb" href="https://ceturb.es.gov.br/" target="_blank">
                         <img class="img-fluid mb-2 mb-sm-0 me-sm-4" src="assets/img/logo_ceturb.png" alt="Logomarca da CETURB/ES">
                     </a>
-                    <a href="https://semobi.es.gov.br/" target="_blank">
+                    <a class="footer__link-goves"href="https://semobi.es.gov.br/" target="_blank">
                         <img class="img-fluid" src="assets/img/brasao_governo_100_branco.png" alt="Brasão do Governo do Estado do Espírito Santo">
                     </a>
                 </div>
