@@ -64,6 +64,7 @@ body {
     padding: 0.2em;
     margin: 0;
     text-align: center;
+    text-transform: uppercase;
     font-weight: 700;
     color: var(--color-light);
     background-color: var(--color-blue);
@@ -174,6 +175,14 @@ body {
     color: var(--color-light);
 }
 
+.section-busca__btn-fechar:focus {
+    outline-color: var(--color-focus);
+    outline-style: solid;
+    outline-width: 0.3em;
+    border: 0.1em solid var(--color-focus-border);
+}
+
+
 /* Acessibilidade */
 .section-resultado__sr-only {
     position: absolute;
@@ -217,8 +226,16 @@ body {
     color: var(--color-light);
     font-weight: 700;
     font-size: 1.4rem;
+    text-transform: uppercase;
     letter-spacing: 0.1em;
     border-radius: 0.4em;
+}
+
+.section-resultado__cod-linha:focus {
+    outline-color: var(--color-focus);
+    outline-style: solid;
+    outline-width: 0.3em;
+    border: 0.1em solid var(--color-focus-border);
 }
 
 .custom-tooltip {
