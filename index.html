@@ -21,21 +21,21 @@
             <div class="row header__div-logo">
                 <div class="d-flex justify-content-center justify-content-sm-start flex-wrap">
                     <img class="header__img-pit" src="assets/img/logo_pit.svg" alt="" style="width:90px;height:82px;">
-                    <h1 class="text-center text-sm-start header__nome-logo">Portal de Informações de <br> Transportes do Estado do <br>Espírito Santo</h1>
+                    <h1 class="text-center text-sm-start header__nome-logo" aria-hidden="true">Portal de Informações de <br> Transportes do Estado do <br>Espírito Santo</h1>
                 </div>
             </div>
             <h2 class="header__titulo">Integração Temporal Transcol gv</h2>
         </header>
 
         <main class="main">
-            <section class="section-busca" id="buscar" aria-label="Buscar linhas que realizam a integração temporal">
+            <section class="section-busca" id="buscar">
                 <h3 class="section-busca__titulo">Buscar linhas que realizam a integração temporal</h3>
                 <div class="section-busca__corpo">
                     <form class="needs-validation" action="" method="get" novalidate>
                         <div class="row">
                             <div class="col-12 col-md-6 text-center text-sm-start section-busca__input-select">
                                 <label for="primeiravalidacao" class="form-label section-busca__label-select">1ª Validação do cartão</label>
-                                <select class="form-select" aria-label="Primeira validação do bilhete" id="primeiravalidacao" required>
+                                <select class="form-select" id="primeiravalidacao" required>
                                     <option selected disabled value="">Selecione um linha, terminal ou estação</option>
                                     <option value="1">010A - Nova Palestina / Fradinhos</option>
                                 </select>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-12 col-md-6 text-center text-sm-start section-busca__input-select">
                                 <label for="segundavalidacao" class="form-label section-busca__label-select">2ª Validação do cartão</label>
-                                <select class="form-select" aria-label="Segunda Validação do bilhete" id="segundavalidacao" required >
+                                <select class="form-select" id="segundavalidacao" required >
                                     <option selected disabled value="">Selecione uma linha</option>
                                     <option value="1">010A - Nova Palestina / Fradinhos</option>
                                 </select>
@@ -83,12 +83,13 @@
 
             </section>
 
-            <section class="section-resultado" aria-label="resultado da busca">
-                <h3 class="section-resultado__sr-only">Linhas, tempo e locais para a integração</h3>
+            <section class="section-resultado">
+                <h3 class="section-resultado__sr-only">Resultado da busca</h3>
                 <div class="section_resultado__corpo">
+                    <h4 class="section-resultado__sr-only">Linhas que se intregram</h4>
                     <div class="row section-resultado__div-linhas">
                         <div class="col-12 col-md-5 section-resultado__div-linha">
-                            <span class="section-resultado__label" arial-label="primeira validação do bilhete">1ª Validação do cartão</span>
+                            <h5 class="section-resultado__label">1ª Validação do cartão</h5>
                             <span class="section-resultado__cod-linha" data-bs-toggle="tooltip" data-bs-placement="bottom"
                             data-bs-custom-class="custom-tooltip" data-bs-title="010A - NOVA PALESTINA / FRADINHOS" tabindex="0">010A</span>
                         </div>
@@ -96,15 +97,15 @@
                             <i class="bi bi-arrow-right section-resultado__icon-arrow" role="img" aria-hidden="true"></i>
                         </div>
                         <div class="col-12 col-md-5 section-resultado__div-linha">
-                            <span class="section-resultado__label" arial-label="segunda validação do bilhete">2ª Validação do cartão</span>
+                            <h5 class="section-resultado__label">2ª Validação do cartão</h5>
                             <span class="section-resultado__cod-linha" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="010A - NOVA PALESTINA / FRADINHOS" tabindex="0">010A</span>
+                            data-bs-custom-class="custom-tooltip" data-bs-title="010A - NOVA PALESTINA / FRADINHOS" tabindex="0">525</span>
                         </div>
                     </div>
                     <div class="row section-resultado__div-integracao">
                         <div class="section-resultado__div-tempo">
                             <i class="bi bi-clock section-resultado__icon-clock" role="img" aria-hidden="true"></i>
-                            <span class="section-resultado__definicao">Tempo para integração:</span>                     
+                            <h4 class="section-resultado__definicao">Tempo para integração:</h4>                     
                             <span class="section-resultado__duracao">1 hora (60 minutos)</span>
                         </div>
                     </div>
