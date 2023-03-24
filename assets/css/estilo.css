@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('assets/fonts/OpenSans-Regular.ttf') format('TrueType');
+    src: url('assets/fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 :root {
