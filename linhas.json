@@ -1,0 +1,50 @@
+{
+    "integracao": [
+        {
+            "primeiravalidacao": [
+                { 
+                  "cod":"015",
+                  "desc": "ILHA DE SANTA MARIA / ROMÃO",
+                  "segundavalidacao": [
+                        {
+                            "cod": "500",
+                            "desc": "T. VILA VELHA / T. ITACIBÁ VIA 3ª PONTE",
+                            "tempo": "1 hora",
+                            "locais": [ "AV. VITÓRIA" ]
+                        },
+                        {
+                            "cod": "573",
+                            "desc": "T. VILA VELHA / T. ITACIBÁ VIA 3ª PONTE",
+                            "tempo": "45 minutos",
+                            "locais": [ "AV. VITÓRIA", "RUA HENRIQUE NOVAES", "AV. JERÔNIMO MONTEIRO", "AV. CLETO NUNES", "AV. MARCOS DE AZEVEDO", "AV. DUARTE LEMOS" ]
+                        }
+                    ]     
+                },
+                { 
+                  "cod":"031A",
+                  "desc": "MORRO DO PINTO / SÃO BENEDITO VIA MARIO CYPRESTE",
+                  "segundavalidacao": [
+                        {
+                            "cod": "536",
+                            "desc": "T. CAMPO GRANDE / T. VILA VELHA VIA MARUIPE - EXPRESSO",
+                            "tempo": "1 hora",
+                            "locais": [ "AV. ALEXANDRE BUAIZ", "AV. ELIAS MIGUEL", "AV. GETÚLIO VARGAS", "AV. MAL. MASCARENHAS DE MORAES" ]
+                        }
+                    ]     
+                },
+                { 
+                  "cod":"104",
+                  "desc": "SANTOS DUMONT / BELA VISTA",
+                  "segundavalidacao": [
+                        {
+                            "cod": "535",
+                            "desc": "T. CARAPINA / T. CAMPO GRANDE VIA T. JARDIM AMÉRICA/SERAFIM DERENZI",
+                            "tempo": "1 hora e 30 minutos",
+                            "locais": [ "AV. SANTO ANTÔNIO", "RUA ENG. MANOEL PASSOS BARROS"]
+                        }
+                    ]     
+                }
+            ]
+        }
+    ]
+}

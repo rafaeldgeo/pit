@@ -1,5 +1,6 @@
+'use strict'
 
-// validação customizada do bootstrap para os campos select 1ª e 2ª validação
+// bootstrap - validação customizada para os campos select 1ª e 2ª validações
 (() => {
     'use strict'
 
@@ -17,7 +18,13 @@
     })
   })()
 
-// tooltip com o nome da linha 
+// bootstrap - tooltip com o nome da linha aplicado ao código da linha na section resultado
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+
+
+
+
+
 
