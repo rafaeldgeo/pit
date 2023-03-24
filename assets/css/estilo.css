@@ -1,10 +1,11 @@
 @charset "utf-8";
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 @font-face {
-    font-family: Pacifico;
-    src: url('/assets/Pacifico.woff2') format('ttf'),
-	}
+    font-family: 'Open Sans';
+    src: url('assets/fonts/OpenSans-Regular.ttf') format('ttf');
+}
 
 :root {
     --color-light: #ffffff;
