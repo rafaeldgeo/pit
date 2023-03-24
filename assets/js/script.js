@@ -2,8 +2,7 @@
 
 // bootstrap - validação customizada para os campos select 1ª e 2ª validações
 (() => {
-    'use strict'
-
+  
     const forms = document.querySelectorAll('.needs-validation')
 
     Array.from(forms).forEach(form => {
