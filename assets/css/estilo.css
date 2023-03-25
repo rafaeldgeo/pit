@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: 'Open Sans Regular';
-    src: url('/assets/fonts/OpenSans-Regular.woff2') format('woff2'); 
+    src: url('https://rafaeldgeo.github.io/pit/assets/fonts/OpenSans-Regular.woff2') format('woff2'); 
 }
 
  @font-face {
     font-family: 'Open Sans Bold';
-    src: url('/assets/fonts/OpenSans-Bold.woff2') format('woff2');
+    src: url('https://rafaeldgeo.github.io/pit/assets/fonts/OpenSans-Bold.woff2') format('woff2');
 } 
 
 :root {
