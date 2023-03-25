@@ -1,4 +1,3 @@
-'use strict'
 
 // bootstrap - validação customizada para os campos select 1ª e 2ª validações
 (() => {
