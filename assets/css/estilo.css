@@ -232,6 +232,7 @@ body {
 
 .section-resultado__label {
     font-family: var(--font-bold);
+    font-weight: 700;
     font-size: 1.2rem;
     text-align: center;
 }
@@ -301,12 +302,14 @@ body {
     text-align: center;
     font-size: 1.2rem;
     font-family: var(--font-bold);
+    font-weight: 700;
 }
 
 .section-resultado__duracao {
     margin: 0.3em;
     text-align: center;
     font-family: var(--font-bold);
+    font-weight: 700;
     font-size: 1.5rem;
 }
 
