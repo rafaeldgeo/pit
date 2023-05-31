@@ -36,24 +36,23 @@
                             <div class="col-12 col-md-6 text-center text-sm-start section-busca__input-select">
                                 <label for="primeiravalidacao" class="form-label section-busca__label-select">1ª Validação do cartão</label>
                                 <select class="form-select" id="primeiravalidacao" required>
-                                    <option selected disabled value="">Selecione um linha, terminal ou estação</option>
+                                    <option selected disabled value="">Selecione uma linha ou terminal</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Selecione uma linha, terminal ou estação 
+                                    Selecione uma linha ou terminal
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 text-center text-sm-start section-busca__input-select">
                                 <label for="segundavalidacao" class="form-label section-busca__label-select">2ª Validação do cartão</label>
-                                <select class="form-select" id="segundavalidacao" required >
-                                    <option selected disabled value="">Selecione uma linha</option>
-                                    <option value="1">010A - Nova Palestina / Fradinhos</option>
+                                <select class="form-select" id="segundavalidacao" disabled required>
+                                    <option selected value="" id="option_noselect" >Selecione uma linha</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Selecione uma linha
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="section-busca__btn-buscar">Buscar</button>
+                        <button type="button" class="section-busca__btn-buscar">Buscar</button> <!-- type definir como submit -->
                     </form>
                     <button class="section-busca__btn-conheca" data-bs-toggle="modal" data-bs-target="#conhecaModal">Conheça como funciona a integração temporal</button>
                 </div>
@@ -82,23 +81,21 @@
 
             </section>
 
-            <section class="section-resultado">
+            <section class="section-resultado" id="resultado" aria-hidden="true" >
                 <h3 class="section-resultado__sr-only">Resultado da busca</h3>
                 <div class="section_resultado__corpo">
                     <h4 class="section-resultado__sr-only">Linhas que se intregram</h4>
                     <div class="row section-resultado__div-linhas">
                         <div class="col-12 col-md-5 section-resultado__div-linha">
                             <h5 class="section-resultado__label">1ª Validação do cartão</h5>
-                            <span class="section-resultado__cod-linha" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="010A - NOVA PALESTINA / FRADINHOS" tabindex="0">010A</span>
+                            <span class="section-resultado__cod-linha section-resultado__cod-linha--1">codigo</span>
                         </div>
                         <div class="col-12 col-md-2 section-resultado__div-linha">
                             <i class="bi bi-arrow-right section-resultado__icon-arrow" role="img" aria-hidden="true"></i>
                         </div>
                         <div class="col-12 col-md-5 section-resultado__div-linha">
                             <h5 class="section-resultado__label">2ª Validação do cartão</h5>
-                            <span class="section-resultado__cod-linha" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="010A - NOVA PALESTINA / FRADINHOS" tabindex="0">525</span>
+                            <span class="section-resultado__cod-linha section-resultado__cod-linha--2" >codigo</span>
                         </div>
                     </div>
                     <div class="row section-resultado__div-integracao">
@@ -111,22 +108,21 @@
                     <div class="row section-resultado__corpo-locais">
                         <h4 class="section-resultado__titulo-locais">Locais para a integração</h4>
                         <div class="col-12 col-md-4 offset-md-4">
-                            <div class="section-resultado__segmento"></div>
-                            <ul class="section-resultado__lista">
-                                <li class="section-resultado__lista-item--top">
+                            <div class="section-resultado__segmento"></div>  
+                              <ul class="section-resultado__lista">
+                               <!--  <li class="section-resultado__lista-item--top">
                                     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-                                    <div><span>Av. Paulino Mullher</span></div>
+                                    <span>Av. Paulino Mullher</span>
                                 </li>
-                                <li class="section-resultado__lista-item--center">
+                                 <li class="section-resultado__lista-item--center">
                                     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-                                    <div><span>Av. Vitória</span>
-                                    </div>
+                                    <span>Av. Vitória</span>
                                 </li>
                                 <li class="section-resultado__lista-item--end">
                                     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-                                    <div><span>Av. Jerônimo Monteiro</span></div>
-                                </li>       
-                            </ul>
+                                    <span>Av. Jerônimo Monteiro</span>
+                                </li>        -->
+                              </ul> 
                         </div>
                     </div>
                 </div>
@@ -160,8 +156,7 @@
           <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
           <script>
             new window.VLibras.Widget('https://vlibras.gov.br/app');
-          </script> 
-
+          </script>          
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="assets/js/script_bootstrap.js"></script>

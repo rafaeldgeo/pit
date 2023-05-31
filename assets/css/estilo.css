@@ -204,6 +204,13 @@ body {
     border: 0.1em solid var(--color-focus-border);
 }
 
+.section-resultado {
+    display: none;
+}
+
+.section-resultado--nohidden {
+    display: block;
+}
 
 /* Acessibilidade */
 .section-resultado__sr-only {
@@ -331,7 +338,7 @@ body {
     height: calc(100% - 37px);
     width: 21px;
     background-color: var(--color-pink);
-    left: 45px;
+    left: 45px;  
     top: 10px;
     position: relative;
     float: left;
