@@ -80,11 +80,10 @@ PRIMEIRO_SELECT.addEventListener("change", (evento) => {
 
 });
 
-// botão
+
 BTN_BUSCAR.addEventListener("click", (evento) => {
     
     const SECTION_RESULTADO = document.getElementById("resultado");
-
     const PRIMEIRA_VALIDACAO = PRIMEIRO_SELECT.value;
     const SEGUNDA_VALIDACAO = SEGUNDO_SELECT.value;
 
@@ -101,30 +100,27 @@ function construirResultado(primeira_validacao, segunda_validacao) {
 
     const DADOS_1VAL = BD_LINHAS[primeira_validacao];
     const {cod_1val} = DADOS_1VAL;
-
     const DADOS_2VAL = BD_LINHAS[primeira_validacao].segundavalidacao[segunda_validacao];
     const {cod_2val, tempo, locais} = DADOS_2VAL;
+    const SELECT_LISTA_LOCAIS = document.querySelector(".section-resultado__lista");
+    let class_item = ""
     
     document.querySelector(".section-resultado__cod-linha--1").innerText = cod_1val;;
     document.querySelector(".section-resultado__cod-linha--2").innerText = cod_2val;
     document.querySelector(".section-resultado__duracao").innerText = tempo;
 
-    const SELECT_LISTA_LOCAIS = document.querySelector(".section-resultado__lista");
     SELECT_LISTA_LOCAIS.innerHTML = "";
    
     for (let i = 0; i < locais.length; i++) {
         if (i === 0) {
-            SELECT_LISTA_LOCAIS.innerHTML += `<li class="section-resultado__lista-item--top">
-    <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-    <span>${locais[i]}</span></li>`;
+            class_item = "section-resultado__lista-item--top";
         } else if (i === locais.length - 1) {
-            SELECT_LISTA_LOCAIS.innerHTML += `<li class="section-resultado__lista-item--end">
-    <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-    <span>${locais[i]}</span></li>`
+            class_item = "section-resultado__lista-item--end";
         } else {
-            SELECT_LISTA_LOCAIS.innerHTML += `<li class="section-resultado__lista-item--center">
+            class_item = "section-resultado__lista-item--center";
+        }
+        SELECT_LISTA_LOCAIS.innerHTML += `<li class="${class_item}">
     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
     <span>${locais[i]}</span></li>`
-        }
     }    
 }
