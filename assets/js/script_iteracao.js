@@ -45,8 +45,8 @@ const BD_LINHAS = [
       }
 ]
 
-const PRIMEIRO_SELECT = document.getElementById("primeiravalidacao");
-const SEGUNDO_SELECT = document.getElementById("segundavalidacao");
+const SELECT_1VAL = document.getElementById("primeiravalidacao");
+const SELECT_2VAL = document.getElementById("segundavalidacao");
 const BTN_BUSCAR = document.querySelector(".section-busca__btn-buscar");
 
 // cria options com as linhas no PRIMEIRO SELECT
@@ -54,28 +54,28 @@ for (let i = 0; i < BD_LINHAS.length; i++) {
     const OPTION = document.createElement("option");
     OPTION.setAttribute("value", i);
     OPTION.innerHTML = `${BD_LINHAS[i].cod_1val} - ${BD_LINHAS[i].desc_1val}`;
-    PRIMEIRO_SELECT.appendChild(OPTION);
+    SELECT_1VAL.appendChild(OPTION);
 }
 
 // cria options com as linhas no SEGUNDO SELECT
-PRIMEIRO_SELECT.addEventListener("change", (evento) => {
-    const LINHA_SELECIONADA = PRIMEIRO_SELECT.value;
+SELECT_1VAL.addEventListener("change", (evento) => {
+    const LINHA_SELECIONADA = SELECT_1VAL.value;
     const LISTA_LINHAS_2VAL = BD_LINHAS[LINHA_SELECIONADA].segundavalidacao;
     const OPTION_NOSELECT = document.getElementById("option_noselect");
     
-    SEGUNDO_SELECT.removeAttribute("disabled");
+    SELECT_2VAL.removeAttribute("disabled");
 
-    while (SEGUNDO_SELECT.hasChildNodes()) {
-        SEGUNDO_SELECT.removeChild(SEGUNDO_SELECT.firstChild);
+    while (SELECT_2VAL.hasChildNodes()) {
+        SELECT_2VAL.removeChild(SELECT_2VAL.firstChild);
     }
 
-    SEGUNDO_SELECT.appendChild(OPTION_NOSELECT);
+    SELECT_2VAL.appendChild(OPTION_NOSELECT);
     
     for (let i = 0; i < LISTA_LINHAS_2VAL.length; i++) {
         const OPTION = document.createElement("option");
         OPTION.setAttribute("value", i);
         OPTION.innerHTML = `${LISTA_LINHAS_2VAL[i].cod_2val} - ${LISTA_LINHAS_2VAL[i].desc_2val}`;
-        SEGUNDO_SELECT.appendChild(OPTION);
+        SELECT_2VAL.appendChild(OPTION);
     }
 
 });
@@ -84,8 +84,8 @@ PRIMEIRO_SELECT.addEventListener("change", (evento) => {
 BTN_BUSCAR.addEventListener("click", (evento) => {
     
     const SECTION_RESULTADO = document.getElementById("resultado");
-    const PRIMEIRA_VALIDACAO = PRIMEIRO_SELECT.value;
-    const SEGUNDA_VALIDACAO = SEGUNDO_SELECT.value;
+    const PRIMEIRA_VALIDACAO = SELECT_1VAL.value;
+    const SEGUNDA_VALIDACAO = SELECT_2VAL.value;
 
     construirResultado(PRIMEIRA_VALIDACAO, SEGUNDA_VALIDACAO);
     
@@ -102,15 +102,16 @@ function construirResultado(primeira_validacao, segunda_validacao) {
     const {cod_1val} = DADOS_1VAL;
     const DADOS_2VAL = BD_LINHAS[primeira_validacao].segundavalidacao[segunda_validacao];
     const {cod_2val, tempo, locais} = DADOS_2VAL;
-    const SELECT_LISTA_LOCAIS = document.querySelector(".section-resultado__lista");
+    const UL_LOCAIS = document.querySelector(".section-resultado__lista");
     let class_item = ""
     
     document.querySelector(".section-resultado__cod-linha--1").innerText = cod_1val;;
     document.querySelector(".section-resultado__cod-linha--2").innerText = cod_2val;
     document.querySelector(".section-resultado__duracao").innerText = tempo;
 
-    SELECT_LISTA_LOCAIS.innerHTML = "";
+    UL_LOCAIS.innerHTML = "";
    
+    // constroi a barra com os locais
     for (let i = 0; i < locais.length; i++) {
         if (i === 0) {
             class_item = "section-resultado__lista-item--top";
@@ -119,7 +120,7 @@ function construirResultado(primeira_validacao, segunda_validacao) {
         } else {
             class_item = "section-resultado__lista-item--center";
         }
-        SELECT_LISTA_LOCAIS.innerHTML += `<li class="${class_item}">
+        UL_LOCAIS.innerHTML += `<li class="${class_item}">
     <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
     <span>${locais[i]}</span></li>`
     }    
