@@ -87,7 +87,7 @@ BTN_BUSCAR.addEventListener("click", (evento) => {
     const PRIMEIRA_VALIDACAO = SELECT_1VAL.value;
     const SEGUNDA_VALIDACAO = SELECT_2VAL.value;
 
-    construirResultado(PRIMEIRA_VALIDACAO, SEGUNDA_VALIDACAO);
+    CONSTRUIR_RESULTADO(PRIMEIRA_VALIDACAO, SEGUNDA_VALIDACAO);
     
     if (SECTION_RESULTADO.classList !== "section-resultado--nohidden") {
         SECTION_RESULTADO.classList.add("section-resultado--nohidden");
@@ -96,14 +96,14 @@ BTN_BUSCAR.addEventListener("click", (evento) => {
 });
 
 // constroi a section resultado 
-function construirResultado(primeira_validacao, segunda_validacao) {
+const CONSTRUIR_RESULTADO = function (primeira_validacao, segunda_validacao) {
 
     const DADOS_1VAL = BD_LINHAS[primeira_validacao];
     const {cod_1val} = DADOS_1VAL;
     const DADOS_2VAL = BD_LINHAS[primeira_validacao].segundavalidacao[segunda_validacao];
     const {cod_2val, tempo, locais} = DADOS_2VAL;
     const UL_LOCAIS = document.querySelector(".section-resultado__lista");
-    let class_item = ""
+    let class_item = "";
     
     document.querySelector(".section-resultado__cod-linha--1").innerText = cod_1val;;
     document.querySelector(".section-resultado__cod-linha--2").innerText = cod_2val;

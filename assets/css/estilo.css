@@ -156,12 +156,12 @@ body {
     font-size: 1rem;
     font-family: var(--font-bold);
     font-weight: 700;
-    background-color: var(--color-dark-blue);
-    color: var(--color-light);
+    outline: 3px solid var(--color-dark-blue);
+    color: var(--color-dark-blue);
 }
 
 .section-busca__btn-conheca:hover {
-    background-color: var(--color-blue);
+    background-color: var(--color-dark-blue);
     color: var(--color-light);
 }
 
