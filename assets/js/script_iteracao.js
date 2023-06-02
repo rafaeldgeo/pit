@@ -49,7 +49,7 @@ const SELECT_1VAL = document.getElementById("primeiravalidacao");
 const SELECT_2VAL = document.getElementById("segundavalidacao");
 const BTN_BUSCAR = document.querySelector(".section-busca__btn-buscar");
 
-// cria options com as linhas no PRIMEIRO SELECT
+// cria options do PRIMEIRO SELECT com o código e nome das linhas
 for (let i = 0; i < BD_LINHAS.length; i++) {
     const OPTION = document.createElement("option");
     OPTION.setAttribute("value", i);
@@ -57,8 +57,8 @@ for (let i = 0; i < BD_LINHAS.length; i++) {
     SELECT_1VAL.appendChild(OPTION);
 }
 
-// cria options com as linhas no SEGUNDO SELECT
-SELECT_1VAL.addEventListener("change", (evento) => {
+// cria options do SEGUNDO SELECT com o código e nome das linhas a partir da linha selecionada
+const criarOptionsSegundoSelect = function() {
     const LINHA_SELECIONADA = SELECT_1VAL.value;
     const LISTA_LINHAS_2VAL = BD_LINHAS[LINHA_SELECIONADA].segundavalidacao;
     const OPTION_NOSELECT = document.getElementById("option_noselect");
@@ -77,26 +77,13 @@ SELECT_1VAL.addEventListener("change", (evento) => {
         OPTION.innerHTML = `${LISTA_LINHAS_2VAL[i].cod_2val} - ${LISTA_LINHAS_2VAL[i].desc_2val}`;
         SELECT_2VAL.appendChild(OPTION);
     }
+}
 
-});
+// Escuta o PRIMEIRO SELECT
+SELECT_1VAL.addEventListener("change", criarOptionsSegundoSelect);
 
-
-BTN_BUSCAR.addEventListener("click", (evento) => {
-    
-    const SECTION_RESULTADO = document.getElementById("resultado");
-    const PRIMEIRA_VALIDACAO = SELECT_1VAL.value;
-    const SEGUNDA_VALIDACAO = SELECT_2VAL.value;
-
-    CONSTRUIR_RESULTADO(PRIMEIRA_VALIDACAO, SEGUNDA_VALIDACAO);
-    
-    if (SECTION_RESULTADO.classList !== "section-resultado--nohidden") {
-        SECTION_RESULTADO.classList.add("section-resultado--nohidden");
-    }
-    SECTION_RESULTADO.scrollIntoView();
-});
-
-// constroi a section resultado 
-const CONSTRUIR_RESULTADO = function (primeira_validacao, segunda_validacao) {
+// cria a section resultado 
+const CriaSectionResultado = function (primeira_validacao, segunda_validacao) {
 
     const DADOS_1VAL = BD_LINHAS[primeira_validacao];
     const {cod_1val} = DADOS_1VAL;
@@ -125,3 +112,19 @@ const CONSTRUIR_RESULTADO = function (primeira_validacao, segunda_validacao) {
     <span>${locais[i]}</span></li>`
     }    
 }
+
+
+BTN_BUSCAR.addEventListener("click", (evento) => {
+    
+    const SECTION_RESULTADO = document.getElementById("resultado");
+    const PRIMEIRA_VALIDACAO = SELECT_1VAL.value;
+    const SEGUNDA_VALIDACAO = SELECT_2VAL.value;
+
+    CriaSectionResultado(PRIMEIRA_VALIDACAO, SEGUNDA_VALIDACAO);
+    
+    if (SECTION_RESULTADO.classList !== "section-resultado--nohidden") {
+        SECTION_RESULTADO.classList.add("section-resultado--nohidden");
+    }
+    SECTION_RESULTADO.scrollIntoView();
+});
+
