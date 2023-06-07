@@ -1,10 +1,39 @@
 "use strict";
 
+/* const BD_LINHAS = '';
+
+// Sending and receiving data in JSON format using POST method
+//
+var xhr = new XMLHttpRequest();
+var url = "http://187.72.67.9:10059/carga/retornarlistacomintegracoesatemporais";
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://187.72.67.9:10059');
+xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        //console.log(json.email + ", " + json.password);
+        console.log(json);
+    }
+};
+
+var data = JSON.stringify({
+    "parametro":[
+       {
+          "login":"prodest",
+          "password":"prD*3#@ahHn#"
+       }
+    ]
+ });
+
+xhr.send(data); */
+
 const BD_LINHAS = [
     {
         cod_1val:"015",
         desc_1val: "ILHA DE SANTA MARIA / ROMÃO", 
-        segundavalidacao: [
+        linhas_integradas: [
             { 
               cod_2val: "500", 
               desc_2val: "T. VILA VELHA / T. ITACIBÁ VIA 3ª PONTE",
@@ -22,7 +51,7 @@ const BD_LINHAS = [
     { 
         cod_1val:"031A",
         desc_1val: "MORRO DO PINTO / SÃO BENEDITO VIA MARIO CYPRESTE",
-        segundavalidacao: [
+        linhas_integradas: [
               {
                   cod_2val: "536",
                   desc_2val: "T. CAMPO GRANDE / T. VILA VELHA VIA MARUIPE - EXPRESSO",
@@ -34,7 +63,7 @@ const BD_LINHAS = [
       { 
         cod_1val:"104",
         desc_1val: "SANTOS DUMONT / BELA VISTA",
-        segundavalidacao: [
+        linhas_integradas: [
               {
                   cod_2val: "535",
                   desc_2val: "T. CARAPINA / T. CAMPO GRANDE VIA T. JARDIM AMÉRICA/SERAFIM DERENZI",
@@ -60,7 +89,7 @@ for (let i = 0; i < BD_LINHAS.length; i++) {
 // cria options do SEGUNDO SELECT com o código e nome das linhas a partir da linha selecionada
 const criarOptionsSegundoSelect = function() {
     const LINHA_SELECIONADA = SELECT_1VAL.value;
-    const LISTA_LINHAS_2VAL = BD_LINHAS[LINHA_SELECIONADA].segundavalidacao;
+    const LISTA_LINHAS_2VAL = BD_LINHAS[LINHA_SELECIONADA].linhas_integradas;
     const OPTION_NOSELECT = document.getElementById("option_noselect");
     
     SELECT_2VAL.removeAttribute("disabled");
@@ -87,7 +116,7 @@ const CriaSectionResultado = function (primeira_validacao, segunda_validacao) {
 
     const DADOS_1VAL = BD_LINHAS[primeira_validacao];
     const {cod_1val} = DADOS_1VAL;
-    const DADOS_2VAL = BD_LINHAS[primeira_validacao].segundavalidacao[segunda_validacao];
+    const DADOS_2VAL = BD_LINHAS[primeira_validacao].linhas_integradas[segunda_validacao];
     const {cod_2val, tempo, locais} = DADOS_2VAL;
     const UL_LOCAIS = document.querySelector(".section-resultado__lista");
     let class_item = "";
@@ -113,18 +142,28 @@ const CriaSectionResultado = function (primeira_validacao, segunda_validacao) {
     }    
 }
 
-
 BTN_BUSCAR.addEventListener("click", (evento) => {
     
-    const SECTION_RESULTADO = document.getElementById("resultado");
+    const SECTION_RESULTADO = document.getElementById("resultado");    
     const PRIMEIRA_VALIDACAO = SELECT_1VAL.value;
     const SEGUNDA_VALIDACAO = SELECT_2VAL.value;
-
-    CriaSectionResultado(PRIMEIRA_VALIDACAO, SEGUNDA_VALIDACAO);
+    const DIV_ALERTA = document.querySelector(".section-busca__alerta");
     
-    if (SECTION_RESULTADO.classList !== "section-resultado--nohidden") {
-        SECTION_RESULTADO.classList.add("section-resultado--nohidden");
-    }
-    SECTION_RESULTADO.scrollIntoView();
+    if (PRIMEIRA_VALIDACAO !== "" && SEGUNDA_VALIDACAO !== "") {
+        CriaSectionResultado(PRIMEIRA_VALIDACAO, SEGUNDA_VALIDACAO);  
+        if (SECTION_RESULTADO.classList !== "section-resultado--nohidden") {
+            SECTION_RESULTADO.classList.add("section-resultado--nohidden");
+        }
+        SECTION_RESULTADO.scrollIntoView();
+    } 
+
 });
+
+
+
+
+
+
+
+
 

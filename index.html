@@ -31,32 +31,29 @@
             <section class="section-busca" id="buscar">
                 <h3 class="section-busca__titulo">Buscar linhas que realizam a integração temporal</h3>
                 <div class="section-busca__corpo">
-                    <form class="needs-validation" action="#" method="get" novalidate>
+                    
+                    <!-- Bootstrap 5 -->
+                    <form class="section-busca__form needs-validation" novalidate>
                         <div class="row">
                             <div class="col-12 col-md-6 text-center text-sm-start section-busca__input-select">
                                 <label for="primeiravalidacao" class="form-label section-busca__label-select">1ª Validação do cartão</label>
                                 <select class="form-select" id="primeiravalidacao" required>
                                     <option selected disabled value="">Selecione uma linha ou terminal</option>
                                 </select>
-                                <div class="invalid-feedback">
-                                    Selecione uma linha ou terminal
-                                </div>
                             </div>
                             <div class="col-12 col-md-6 text-center text-sm-start section-busca__input-select">
                                 <label for="segundavalidacao" class="form-label section-busca__label-select">2ª Validação do cartão</label>
                                 <select class="form-select" id="segundavalidacao" disabled required>
                                     <option selected value="" id="option_noselect" >Selecione uma linha</option>
                                 </select>
-                                <div class="invalid-feedback">
-                                    Selecione uma linha
-                                </div>
                             </div>
                         </div>
-                        <button type="button" class="section-busca__btn-buscar">Buscar</button> <!-- type definir como submit -->
+                        <button type="button" class="section-busca__btn-buscar">Buscar</button>
                     </form>
                     <button class="section-busca__btn-conheca" data-bs-toggle="modal" data-bs-target="#conhecaModal">Conheça como funciona a integração temporal</button>
                 </div>
-
+                
+                <!-- Bootstrap 5 -->
                 <div class="modal fade" id="conhecaModal" tabindex="-1" aria-labelledby="conhecaModalLabel">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
@@ -106,7 +103,7 @@
                     </div>
                     <div class="row section-resultado__corpo-locais">
                         <h4 class="section-resultado__titulo-locais">Locais para a integração</h4>
-                        <div class="col-12 col-md-4 offset-md-4">
+                        <div class="col-12 col-md-6 offset-md-3 col-lg-8 offset-lg-4">
                             <div class="section-resultado__segmento"></div>  
                               <ul class="section-resultado__lista">
                               </ul> 

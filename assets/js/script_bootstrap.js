@@ -1,25 +1,64 @@
-// bootstrap - validação customizada para os campos select 1ª e 2ª validações
-(() => {
+// bootstrap - validação campos select 1ª e 2ª validações - script modificado
+/* 
+ (() => {
 
   "use strict";
 
-    const forms = document.querySelectorAll('.needs-validation')
+    const forms = document.querySelectorAll('.needs-validation');
+    const btn = document.querySelector(".section-busca__btn-buscar");
 
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
+    Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      btn.addEventListener('click', function (event) {
         if (!form.checkValidity()) {
           event.preventDefault()
           event.stopPropagation()
         }
-  
         form.classList.add('was-validated')
       }, false)
     })
-  })()
+})() */
+/* 
+(() => {
 
-// bootstrap - tooltip com o nome da linha aplicado ao código da linha na section resultado
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  "use strict";
+
+    const forms = document.querySelectorAll('.needs-validation');
+    const btn = document.querySelector(".section-busca__btn-buscar");
+
+    Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      btn.addEventListener('click', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+ */
+/* 
+const SELECTS = document.querySelectorAll(".form-select");
+const btn = document.querySelector(".section-busca__btn-buscar");
+
+
+(() => {
+  const p = document.createElement("p");
+  p.textContent = "teste";
+  SELECTS.forEach(function(select) {
+    btn.addEventListener("click", (e) => {
+      if(!select.checkValidity()) {
+        select.insertAdjacentElement("afterend", p);
+      }
+    })
+  }); 
+})();
+
+
+ */
+
+
 
 
 
