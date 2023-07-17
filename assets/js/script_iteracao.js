@@ -42,7 +42,20 @@ const BD_LINHAS = [
                   locais: [ "AV. SANTO ANTÔNIO", "RUA ENG. MANOEL PASSOS BARROS"]
               }
           ]     
+      },
+      { 
+        cod_1val:"504",
+        desc_1val: "JACARAIPE / T. ITACIBÁ VIA RETA DA PENHA",
+        linhas_integradas: [
+              {
+                  cod_2val: "888",
+                  desc_2val: "FUNDÃO / SERRA SEDE VIA TIMBUÍ",
+                  tempo: "1 hora e 30 minutos",
+                  locais: ["VIAS DIFERENTES"]
+              }
+          ]     
       }
+
 ]
 
 const SELECT_1VAL = document.getElementById("primeiravalidacao");
@@ -90,27 +103,41 @@ const CriaSectionResultado = function (primeira_validacao, segunda_validacao) {
     const DADOS_2VAL = BD_LINHAS[primeira_validacao].linhas_integradas[segunda_validacao];
     const {cod_2val, tempo, locais} = DADOS_2VAL;
     const UL_LOCAIS = document.querySelector(".section-resultado__lista");
+    const LOCAIS = document.querySelector(".section-resultado__locais");
+    const MENSAGEM = document.querySelector(".section-resultado__mensagem");
     let class_item = "";
     
     document.querySelector(".section-resultado__cod-linha--1").innerText = cod_1val;;
     document.querySelector(".section-resultado__cod-linha--2").innerText = cod_2val;
     document.querySelector(".section-resultado__duracao").innerText = tempo;
-
+    
     UL_LOCAIS.innerHTML = "";
+    MENSAGEM.innerHTML = "";
+
+    if (locais[0] === "VIAS DIFERENTES") {
+        let p = document.createElement("p");
+        p.innerText = "A troca de ônibus deverá ser realizada dentro do período de tempo estipulado para a integração desejada. Ao desembarcar do coletivo da primeira linha, o usuário deverá se dirigir ao ponto de parada mais próximo, em que passe a segunda linha, para fazer o segundo embarque."
+        MENSAGEM.appendChild(p);
+        LOCAIS.style.display = "none";
+        MENSAGEM.style.display = "block"
+    } else {
+        MENSAGEM.style.display = "none"
+        LOCAIS.style.display = "block";
+        // constroi a barra com os locais
+        for (let i = 0; i < locais.length; i++) {
+            if (i === 0) {
+                class_item = "section-resultado__lista-item--top";
+            } else if (i === locais.length - 1) {
+                class_item = "section-resultado__lista-item--end";
+            } else {
+                class_item = "section-resultado__lista-item--center";
+            }
+            UL_LOCAIS.innerHTML += `<li class="${class_item}">
+        <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
+        <span>${locais[i]}</span></li>`
+        }        
+    }
    
-    // constroi a barra com os locais
-    for (let i = 0; i < locais.length; i++) {
-        if (i === 0) {
-            class_item = "section-resultado__lista-item--top";
-        } else if (i === locais.length - 1) {
-            class_item = "section-resultado__lista-item--end";
-        } else {
-            class_item = "section-resultado__lista-item--center";
-        }
-        UL_LOCAIS.innerHTML += `<li class="${class_item}">
-    <div><img src="assets/img/circle-fill.svg" alt="" class="section-resultado__marcador"></div>
-    <span>${locais[i]}</span></li>`
-    }    
 }
 
 BTN_BUSCAR.addEventListener("click", (evento) => {
