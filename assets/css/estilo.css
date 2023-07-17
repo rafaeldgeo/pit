@@ -41,6 +41,7 @@ body {
     font-family: var(--font-regular);
 }
 
+
 /* Atalho acessibilidade */
 .header__skip {
     position: absolute;
@@ -335,6 +336,19 @@ body {
     font-size: 1.2rem;
     font-family: var(--font-bold);
     font-weight: 700;
+}
+
+.section-resultado__mensagem {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.4em;
+    color: var(--color-dark-pink);
+}
+
+.section-resultado__locais {
+    display: none;
 }
 
 .section-resultado__segmento {
