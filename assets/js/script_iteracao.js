@@ -1,34 +1,5 @@
 "use strict";
 
-/* const BD_LINHAS = '';
-
-// Sending and receiving data in JSON format using POST method
-//
-var xhr = new XMLHttpRequest();
-var url = "http://187.72.67.9:10059/carga/retornarlistacomintegracoesatemporais";
-xhr.open("POST", url, true);
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://187.72.67.9:10059');
-xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
-xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        var json = JSON.parse(xhr.responseText);
-        //console.log(json.email + ", " + json.password);
-        console.log(json);
-    }
-};
-
-var data = JSON.stringify({
-    "parametro":[
-       {
-          "login":"prodest",
-          "password":"prD*3#@ahHn#"
-       }
-    ]
- });
-
-xhr.send(data); */
-
 const BD_LINHAS = [
     {
         cod_1val:"015",
